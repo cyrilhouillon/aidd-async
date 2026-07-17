@@ -9,8 +9,6 @@ Personal plugin marketplace hosting `aidd-async`, an asynchronous-collaboration 
 /plugin install aidd-async@aidd-async
 ```
 
-The repository is private, so the machine adding the marketplace needs git credentials for it (an authenticated `gh` CLI or an SSH key).
-
 ## Content
 
 | Plugin | Skill | Purpose |
