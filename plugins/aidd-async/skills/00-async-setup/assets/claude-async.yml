@@ -47,6 +47,7 @@ jobs:
           plugin_marketplaces: |
             __ASYNC_MARKETPLACE__
           claude_args: --max-turns 25 --allowedTools "Read,Grep,Glob,Write,Bash(gh:*)"
+          show_full_output: true
 
   # Implement — "__IMPLEMENT_TAG__" on an issue (never a pull request).
   # Delegates to aidd-dev:00-sdlc, which discovers the spec capability
@@ -94,6 +95,7 @@ jobs:
             __ASYNC_MARKETPLACE__
             __FRAMEWORK_MARKETPLACE__
           claude_args: --max-turns 40 --permission-mode bypassPermissions
+          show_full_output: true
 
   # Fix — "__IMPLEMENT_TAG__" on a pull request. Applies the review feedback.
   # Delegates to aidd-dev:02-implement, aidd-dev:05-review, and
@@ -132,3 +134,4 @@ jobs:
             __ASYNC_MARKETPLACE__
             __FRAMEWORK_MARKETPLACE__
           claude_args: --max-turns 25 --permission-mode bypassPermissions
+          show_full_output: true
