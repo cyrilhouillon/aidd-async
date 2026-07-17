@@ -33,7 +33,7 @@ Run `01 → 02 → 03 → 04 → 05`. Interactive; each step confirms before the
 
 - A developer runs the skill locally to install or refresh the automation, once, when wiring a repository. It is not triggered by CI.
 - The workflow it writes drives `01-async-brainstorm`, `02-async-implement`, and `03-async-fix`, which do run headless, one round per trigger.
-- The implement and fix jobs delegate to `aidd-dev` and `aidd-vcs`, so the workflow loads those plugins from the framework marketplace alongside `aidd-async`.
+- Each job loads only the plugins its skill transitively delegates to. Brainstorm loads only `aidd-async`; implement adds `aidd-dev`, `aidd-vcs`, and `aidd-pm` (the spec capability); fix adds `aidd-dev` and `aidd-vcs`.
 
 ## References
 

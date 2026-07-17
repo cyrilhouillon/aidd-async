@@ -13,7 +13,7 @@ The `claude-code-action` step authenticates to Anthropic one of two ways. The wo
 
 ## Framework marketplace token
 
-The implement and fix jobs delegate to `aidd-dev` and `aidd-vcs`, which ship from the framework marketplace (`ai-driven-dev/framework`). When that repository is public, its clone URL needs no token. When it is private, the workflow injects `secrets.<name>`, and the runner needs it because it does not carry the developer's local credentials. The `aidd-async` marketplace is this plugin's own public repository and needs no token.
+The implement and fix jobs delegate to `aidd-dev`, `aidd-vcs`, and (for the spec step of a thin issue) `aidd-pm`, which ship from the framework marketplace (`ai-driven-dev/framework`). The brainstorm job delegates to nothing, so it loads only `aidd-async` and never references the framework marketplace. When the framework repository is public, its clone URL needs no token. When it is private, the workflow injects `secrets.<name>`, and the runner needs it because it does not carry the developer's local credentials. The `aidd-async` marketplace is this plugin's own public repository and needs no token.
 
 - Obtain a fine-grained PAT at `https://github.com/settings/personal-access-tokens/new`, resource owner the framework repo's owner, repository access that one repo, permission `Contents: Read-only`. Default secret name `AIDD_FRAMEWORK_TOKEN`.
 
