@@ -84,8 +84,11 @@ jobs:
           prompt: >-
             Use skill aidd-async:02-async-implement on issue
             #${{ github.event.issue.number }} in ${{ github.repository }}.
-            You are on the prepared feature branch. Delegate the full flow, then
-            comment the draft pull request back on the issue.
+            You are on the prepared feature branch. This is a single headless
+            run with no later turn, so run every subagent synchronously and
+            never defer work to a background task. Delegate the full flow to
+            completion, then comment the draft pull request back on the issue
+            before ending.
           plugins: |
             aidd-async@aidd-async
             aidd-dev@aidd-framework
@@ -94,7 +97,7 @@ jobs:
           plugin_marketplaces: |
             __ASYNC_MARKETPLACE__
             __FRAMEWORK_MARKETPLACE__
-          claude_args: --max-turns 40 --permission-mode bypassPermissions
+          claude_args: --permission-mode bypassPermissions
           show_full_output: true
 
   # Fix — "__IMPLEMENT_TAG__" on a pull request. Applies the review feedback.
@@ -124,8 +127,11 @@ jobs:
           prompt: >-
             Use skill aidd-async:03-async-fix on pull request
             #${{ github.event.issue.number }} in ${{ github.repository }}.
-            You are on the pull request branch. Apply the review feedback newer
-            than your last activity and push onto it.
+            You are on the pull request branch. This is a single headless run
+            with no later turn, so run every subagent synchronously and never
+            defer work to a background task. Apply the review feedback newer
+            than your last activity, push onto the branch, and comment before
+            ending.
           plugins: |
             aidd-async@aidd-async
             aidd-dev@aidd-framework
@@ -133,5 +139,5 @@ jobs:
           plugin_marketplaces: |
             __ASYNC_MARKETPLACE__
             __FRAMEWORK_MARKETPLACE__
-          claude_args: --max-turns 25 --permission-mode bypassPermissions
+          claude_args: --permission-mode bypassPermissions
           show_full_output: true

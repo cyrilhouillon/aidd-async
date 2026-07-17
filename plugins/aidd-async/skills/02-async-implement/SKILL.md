@@ -22,6 +22,7 @@ Run `01 → 02 → 03`. One build per invocation; the issue is done once the dra
 
 - Delegate, never build. Carry no planning, coding, review, or pull-request logic; the delegated flow owns all of it.
 - One build per invocation. After posting, end the invocation. Never poll, sleep, or wait for a reply.
+- Run the delegated flow to completion inside this one invocation. Spawn every subagent synchronously and read its result before continuing. Never background a task or defer work to a later turn, because a headless run has no later turn; ending before the pull request is open and commented loses the whole build.
 - The issue thread is the state. Rebuild the request from the issue body and its comments. Trust the thread over anything local.
 - The skill runs on a feature branch the host workflow prepared from the default branch. It assumes this branch, it never creates, names, rebases, merges, or force-pushes one.
 - Open no pull request. The delegated ship step opens the draft; the skill only reads the URL ship returns.

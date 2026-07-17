@@ -23,6 +23,7 @@ Run `01 → 02 → 03 → 04`. One round per invocation; the next round starts w
 
 - Delegate, never build. Carry no coding, review, commit, or pull-request logic; the delegated steps own all of it.
 - One round per invocation. After posting, end the invocation. Never poll, sleep, or wait for a reply.
+- Run the delegated fix and review to completion inside this one invocation. Spawn every subagent synchronously and read its result before continuing. Never background a task or defer work to a later turn, because a headless run has no later turn; ending before the push and the comment loses the round.
 - The pull request thread is the state. Answer only the feedback posted after the bot's last activity. Rebuild it from the thread, trust it over anything local.
 - The skill runs on the pull request branch the host workflow checked out. It assumes this branch, it never creates, names, rebases, merges, or force-pushes one.
 - Open no pull request. The pull request already exists; the push onto its branch updates it.
