@@ -1,18 +1,24 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "aidd-async",
-  "version": "0.1.0",
-  "description": "Asynchronous collaboration: refine ideas through GitHub issue comment rounds, one invocation per round.",
+  "version": "0.2.0",
+  "description": "Asynchronous, issue-driven development on GitHub: brainstorm, implement, and fix across comment rounds, one invocation per round, plus a setup skill that wires the GitHub Actions.",
   "author": {
     "name": "Cyril Houillon",
     "url": "https://github.com/cyrilhouillon"
   },
   "skills": [
-    "./skills/01-async-brainstorm"
+    "./skills/00-async-setup",
+    "./skills/01-async-brainstorm",
+    "./skills/02-async-implement",
+    "./skills/03-async-fix"
   ],
   "keywords": [
     "async",
     "brainstorm",
+    "implement",
+    "pull-requests",
+    "ci",
     "collaboration",
     "github",
     "issues"
