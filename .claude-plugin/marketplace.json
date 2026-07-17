@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "aidd-async",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Personal marketplace hosting the aidd-async plugin.",
   "owner": {
     "name": "Cyril Houillon"

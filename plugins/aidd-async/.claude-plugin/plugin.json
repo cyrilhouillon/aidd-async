@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "aidd-async",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Asynchronous, issue-driven development on GitHub: brainstorm, implement, and fix across comment rounds, one invocation per round, plus a setup skill that wires the GitHub Actions.",
   "author": {
     "name": "Cyril Houillon",
