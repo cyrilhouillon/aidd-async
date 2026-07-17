@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "aidd-async",
+  "version": "0.1.0",
+  "description": "Personal marketplace hosting the aidd-async plugin.",
+  "owner": {
+    "name": "Cyril Houillon"
+  },
+  "plugins": [
+    {
+      "name": "aidd-async",
+      "source": "./plugins/aidd-async",
+      "description": "Asynchronous collaboration: refine ideas through GitHub PR comment rounds, one invocation per round.",
+      "strict": true
+    }
+  ]
+}
