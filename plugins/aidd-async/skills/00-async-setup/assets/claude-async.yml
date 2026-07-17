@@ -46,7 +46,7 @@ jobs:
             aidd-async@aidd-async
           plugin_marketplaces: |
             __ASYNC_MARKETPLACE__
-          claude_args: --max-turns 15 --allowedTools "Read,Grep,Glob,Bash(gh:*)"
+          claude_args: --max-turns 25 --allowedTools "Read,Grep,Glob,Write,Bash(gh:*)"
 
   # Implement — "__IMPLEMENT_TAG__" on an issue (never a pull request).
   # Delegates to aidd-dev:00-sdlc, which discovers the spec capability
