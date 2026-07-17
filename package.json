@@ -1,0 +1,17 @@
+{
+  "name": "aidd-async-marketplace",
+  "version": "0.0.0-managed",
+  "private": true,
+  "description": "Release tooling for the aidd-async plugin marketplace.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cyrilhouillon/aidd-async.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^24.2.0"
+  }
+}
