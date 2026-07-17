@@ -28,5 +28,5 @@ Auto-generated index of skills, agents, references and assets shipped by the `ai
 | [01-async-brainstorm\actions\05-post.md](skills\01-async-brainstorm\actions\05-post.md) | - |
 | [01-async-brainstorm\assets\comment-template.md](skills\01-async-brainstorm\assets\comment-template.md) | - |
 | [01-async-brainstorm\references\probing.md](skills\01-async-brainstorm\references\probing.md) | - |
-| [01-async-brainstorm\SKILL.md](skills\01-async-brainstorm\SKILL.md) | `Clarify a vague idea through rounds of GitHub PR comments, one probing round per invocation. Use when a PR comment asks to brainstorm an idea, or the user points at a pull request to brainstorm on. Not for live in-session brainstorming or reviewing code.` |
+| [01-async-brainstorm\SKILL.md](skills\01-async-brainstorm\SKILL.md) | `Clarify a vague idea through rounds of GitHub issue comments, one probing round per invocation. Use when an issue comment tags the skill to brainstorm an idea, or the user points at an issue to brainstorm on. Not for live in-session brainstorming or reviewing code.` |
 

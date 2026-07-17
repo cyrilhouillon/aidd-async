@@ -1,6 +1,6 @@
 # Probing, async rounds
 
-How to dig until an idea is clear when every exchange is a PR comment round-trip. Depth still comes from following threads, but rounds are batched because each one may cost hours or days.
+How to dig until an idea is clear when every exchange is an issue comment round-trip. Depth still comes from following threads, but rounds are batched because each one may cost hours or days.
 
 ## Read the altitude first
 

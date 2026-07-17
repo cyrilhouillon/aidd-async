@@ -13,4 +13,4 @@ Personal plugin marketplace hosting `aidd-async`, an asynchronous-collaboration 
 
 | Plugin | Skill | Purpose |
 | ------ | ----- | ------- |
-| [aidd-async](plugins/aidd-async/README.md) | [async-brainstorm](plugins/aidd-async/skills/01-async-brainstorm/SKILL.md) | Clarify a vague idea through rounds of GitHub PR comments, one probing round per invocation, the thread carrying the state. |
+| [aidd-async](plugins/aidd-async/README.md) | [async-brainstorm](plugins/aidd-async/skills/01-async-brainstorm/SKILL.md) | Clarify a vague idea through rounds of GitHub issue comments, one probing round per invocation, the thread carrying the state. |

@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "aidd-async",
   "version": "0.1.0",
-  "description": "Asynchronous collaboration: refine ideas through GitHub PR comment rounds, one invocation per round.",
+  "description": "Asynchronous collaboration: refine ideas through GitHub issue comment rounds, one invocation per round.",
   "author": {
     "name": "Cyril Houillon",
     "url": "https://github.com/cyrilhouillon"
@@ -15,7 +15,7 @@
     "brainstorm",
     "collaboration",
     "github",
-    "pull-request"
+    "issues"
   ],
   "repository": "https://github.com/cyrilhouillon/aidd-async",
   "license": "MIT"

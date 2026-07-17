@@ -10,7 +10,7 @@
     {
       "name": "aidd-async",
       "source": "./plugins/aidd-async",
-      "description": "Asynchronous collaboration: refine ideas through GitHub PR comment rounds, one invocation per round.",
+      "description": "Asynchronous collaboration: refine ideas through GitHub issue comment rounds, one invocation per round.",
       "strict": true
     }
   ]

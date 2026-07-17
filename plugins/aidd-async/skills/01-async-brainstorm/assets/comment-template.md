@@ -1,6 +1,6 @@
 <!-- aidd-async:brainstorm -->
 
-<BODY: the round's questions grouped by theme and numbered, or the final consolidated idea with its open list. Written in the thread's language.>
+<BODY: the round's questions grouped by theme and numbered, or the final self-contained consolidated idea with its open list. Written in the thread's language.>
 
 ---
 
