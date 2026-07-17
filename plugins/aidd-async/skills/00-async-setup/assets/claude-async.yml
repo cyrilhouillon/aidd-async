@@ -93,7 +93,7 @@ jobs:
           plugin_marketplaces: |
             __ASYNC_MARKETPLACE__
             __FRAMEWORK_MARKETPLACE__
-          claude_args: --max-turns 40 --allowedTools "Read,Grep,Glob,Edit,Write,TodoWrite,Bash(git:*),Bash(gh:*),__STACK_TOOLS__"
+          claude_args: --max-turns 40 --permission-mode bypassPermissions
 
   # Fix — "__IMPLEMENT_TAG__" on a pull request. Applies the review feedback.
   # Delegates to aidd-dev:02-implement, aidd-dev:05-review, and
@@ -131,4 +131,4 @@ jobs:
           plugin_marketplaces: |
             __ASYNC_MARKETPLACE__
             __FRAMEWORK_MARKETPLACE__
-          claude_args: --max-turns 25 --allowedTools "Read,Grep,Glob,Edit,Write,TodoWrite,Bash(git:*),Bash(gh:*),__STACK_TOOLS__"
+          claude_args: --max-turns 25 --permission-mode bypassPermissions

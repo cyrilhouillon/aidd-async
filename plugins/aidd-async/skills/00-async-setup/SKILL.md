@@ -12,8 +12,8 @@ Wires the async pipeline into a host repository. It writes one GitHub Actions wo
 
 | #   | Action      | Role                                                             | Input                        |
 | --- | ----------- | --------------------------------------------------------------- | ---------------------------- |
-| 01  | `detect`    | Read the repo, stack, framework access, and existing secrets    | the target repository        |
-| 02  | `configure` | Confirm the tags, auth mode, marketplaces, and stack allowlist  | the detection record         |
+| 01  | `detect`    | Read the repo, framework access, and existing secrets           | the target repository        |
+| 02  | `configure` | Confirm the tags, auth mode, and marketplaces                   | the detection record         |
 | 03  | `generate`  | Render the workflow into `.github/workflows/` from the template | the config                   |
 | 04  | `secrets`   | Set the secrets the workflow references, skipping the present   | the config and detection     |
 | 05  | `report`    | List any deferred secret and the steps that finish the install  | the written workflow         |
@@ -25,7 +25,7 @@ Run `01 → 02 → 03 → 04 → 05`. Interactive; each step confirms before the
 - Write one project file, the workflow under `.github/workflows/`. Touch no other file.
 - Set secrets, never mint them. The skill stores a value the user supplies with `gh secret set`, skips the names already present, and defers the ones the user declines; it never generates a token.
 - Commit nothing. Stage the workflow and hand the commit to the user, who reviews and pushes it.
-- Detect, never ask blind. Read the repository, its default branch, its stack, the framework access, and the existing secrets from the repo, then confirm the detected value instead of asking cold.
+- Detect, never ask blind. Read the repository, its default branch, the framework access, and the existing secrets from the repo, then confirm the detected value instead of asking cold.
 - Regenerate in place. On a re-run, show the diff and ask to overwrite the existing workflow; never write a duplicate.
 - The plugin ships the skill; the host repository owns its own CI wiring and its own secrets.
 
@@ -37,7 +37,7 @@ Run `01 → 02 → 03 → 04 → 05`. Interactive; each step confirms before the
 
 ## References
 
-- `references/auth-and-secrets.md`: the Anthropic auth modes, the framework marketplace token, the GitHub write token note, and the stack allowlist.
+- `references/auth-and-secrets.md`: the Anthropic auth modes, the framework marketplace token, the GitHub write token note, and the per-job permissions.
 
 ## Assets
 

@@ -21,14 +21,6 @@ The implement and fix jobs delegate to `aidd-dev`, `aidd-vcs`, and (for the spec
 
 By default the jobs let git and `gh` use the workflow's built-in `GITHUB_TOKEN`. It can comment, push, and open a pull request, and its actions are attributed to the actions bot, so the comments it posts never re-trigger the workflow. This needs no secret. One limit, the built-in token lacks the `workflows` scope, so a run that edits a file under `.github/workflows/` is rejected. For a repository whose issues touch workflow files, add a fine-grained PAT with `Contents`, `Pull requests`, and `Issues` read and write plus `Workflows` read and write, and pass it as `github_token` on each `claude-code-action` step.
 
-## Stack allowlist
+## Job permissions
 
-The implement and fix jobs run the delegated tests, lint, and build, so their `claude_args` allowlist must include the stack's runner. Detect the stack from the repository's build manifest, keep the base tools always, add one stack line, and never grant `Bash(*)` in the large.
-
-| Stack                 | Manifest at the repo root                    | Tool line                                              |
-| --------------------- | -------------------------------------------- | ------------------------------------------------------ |
-| JavaScript/TypeScript | `package.json`, a lockfile                   | `Bash(npm:*),Bash(npx:*),Bash(pnpm:*),Bash(yarn:*)`    |
-| Python                | `pyproject.toml`, `requirements.txt`         | `Bash(uv:*),Bash(python:*),Bash(pytest:*),Bash(ruff:*)`|
-| Rust                  | `Cargo.toml`                                 | `Bash(cargo:*)`                                         |
-| Java                  | `pom.xml`, `build.gradle`                    | `Bash(mvn:*),Bash(gradle:*)`                           |
-| Other                 | `Makefile`                                    | `Bash(make:*)`                                          |
+The brainstorm job is self-contained and runs under a tight `--allowedTools` list, `Read,Grep,Glob,Write,Bash(gh:*)`, enough to read the thread and post the comment via `--body-file`. The implement and fix jobs delegate to the SDLC, which spawns subagents and runs the project's own tests, lint, and build, a set no fixed allowlist can enumerate, so they run under `--permission-mode bypassPermissions`, the same choice the framework orchestrator makes for its unattended runs.
